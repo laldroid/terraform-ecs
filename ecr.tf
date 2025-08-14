@@ -5,6 +5,7 @@ provider "aws" {
 }
 
 # Create the ECR repository
+
 resource "aws_ecr_repository" "my_repo" {
   name                 = "my-single-ecr-repo"   # Name of your ECR repository
   image_tag_mutability  = "MUTABLE"
@@ -15,4 +16,5 @@ resource "aws_ecr_repository" "my_repo" {
 output "ecr_repository_url" {
   value = aws_ecr_repository.my_repo.repository_url
 }
+
 
